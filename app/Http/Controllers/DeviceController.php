@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Device;
-use App\Models\User; // Add this line to import the User model
+use App\Models\User;
 
 class DeviceController extends Controller
 {
-    public function list(){
-        $model1 = user::all(); // Change "users" to "User" and use correct capitalization
-        return $model1;
+    public function list($id=null){
+        $model1 = User::all(); 
+        $model2 = User::find($id); 
+        return $id ? $model2 : $model1;  
     }
 }
