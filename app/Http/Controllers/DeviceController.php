@@ -26,4 +26,24 @@ class DeviceController extends Controller
             return ["Result" => "Operation failed"];
         }
     }
+    public function update(Request $request){
+
+        $user1=User::find($request->id);
+        $user1->name=$request->name;
+        $user1->email=$request->email;
+        $user1->password=$request->password;
+        $result=$user1->save();
+
+        if($result){
+            return ["Result" => "DATA HAS BEEN UPDATED"];
+        }
+        else{
+            return ["Result"=>"DATA UPDATED FAILED"];
+        }
+        
+
+    }
+
+
+
 }
