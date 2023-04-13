@@ -14,6 +14,7 @@ use App\Http\Controllers\DeviceController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post('save',[DeviceController::class,'testData']);
 Route::get('data',[dummyAPI::class,'getData']);
 Route::get('list/{id?}',[DeviceController::class,'list']);
 Route::post('add',[DeviceController::class,'add']);

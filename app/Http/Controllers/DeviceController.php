@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Device;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Validator;
 
 class DeviceController extends Controller
 {
@@ -43,6 +43,24 @@ class DeviceController extends Controller
         
 
     }
+    public function testData(Request $request){
+        $rules=array(
+            "email"=>"required|min:2|max:4"
+        );    
+        $validator=Validator::make($request->all(),$rules);
+        if($validator->fails()){
+            return $validator->errors();
+        }
+        else{
+            return ["x"=>"y"]; 
+        }
+        
+        
+    }
+
+
+
+
 
 
 
