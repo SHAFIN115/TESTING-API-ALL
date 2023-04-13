@@ -16,3 +16,4 @@ use App\Http\Controllers\DeviceController;
 */
 Route::get('data',[dummyAPI::class,'getData']);
 Route::get('list/{id?}',[DeviceController::class,'list']);
+Route::post('add',[DeviceController::class,'add']);
