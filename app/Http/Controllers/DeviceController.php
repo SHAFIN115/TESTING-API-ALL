@@ -57,6 +57,17 @@ class DeviceController extends Controller
         
         
     }
+    public function delete($id){
+        $user1=User::find($id);
+        $result=$user1->delete();
+        if($result){
+            return ["result"=>"Record has been deleted".$id];
+        }
+        else{
+            return ["result"=>"Delete Operation has been failed"];
+        }
+        
+    }
 
 
 
