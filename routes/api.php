@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dummyAPI;
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\MemberController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,3 +21,6 @@ Route::get('list/{id?}',[DeviceController::class,'list']);
 Route::post('add',[DeviceController::class,'add']);
 Route::put('update',[DeviceController::class,'update']);
 Route::delete('delete/{id}',[DeviceController::class,'delete']);
+
+
+Route::apiResource('member',MemberController::class);
