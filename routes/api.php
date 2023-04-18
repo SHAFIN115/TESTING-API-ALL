@@ -6,6 +6,8 @@ use App\Http\Controllers\dummyAPI;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FileController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,6 +25,7 @@ Route::post('add',[DeviceController::class,'add']);
 Route::post('login',[UserController::class,'index']);
 Route::put('update',[DeviceController::class,'update']);
 Route::delete('delete/{id}',[DeviceController::class,'delete']);
+Route::post('upload',[FileController::class,'upload']);
 
 
 Route::apiResource('member',MemberController::class);
